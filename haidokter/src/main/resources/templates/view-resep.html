@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>View Resep</title>
+    </head>
+    <body>
+    <h2>Informasi resep</h2>
+        <div class="container">
+            <div th:if="${resep != null}">
+                <h3 th:text=" 'Nomor Resep: '+ ${resep.noResep}"></h3>
+                <h3 th:text=" 'Nama Dokter: '+ ${resep.namaDokter}"></h3>
+                <h3 th:text=" 'Nama Pasien: '+ ${resep.namaPasien}"></h3>
+                <h3 th:text=" 'Catatan: '+ ${resep.catatan}"></h3>
+            </div>
+            <div th:unless="${resep != null}">
+                <h3 th:text="${msg}"></h3>
+            </div>
+        </div>
+    <a href="/resep/viewall">kembali</a>
+    </body>
+</html>

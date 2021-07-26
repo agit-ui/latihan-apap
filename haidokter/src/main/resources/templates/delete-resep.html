@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>Update Catatan Resep</title>
+    </head>
+    <body>
+    <div class="container">
+        <div th:if="${resep != null}">
+            <h2 th:text="'Catatan resep dengan nomor ' + ${noResep.get()} + ' berhasil didelete'"></h2>
+        </div>
+        <div th:unless="${resep != null}">
+            <h3 th:text="${msg}"></h3>
+        </div>
+        <a href="/resep/viewall">Kembali</a>
+    </div>
+    </body>
+</html>
