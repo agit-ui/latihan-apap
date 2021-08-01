@@ -1,14 +1,19 @@
 package apap.tutorial.haidokter.service;
 
 import apap.tutorial.haidokter.model.ResepModel;
+import apap.tutorial.haidokter.repository.ResepDb;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ResepInMemoryService implements ResepService {
+
+    @Autowired
+    private  ResepDb resepDb;
+
     private List<ResepModel> listResep;
 
     public ResepInMemoryService() {
@@ -36,27 +41,13 @@ public class ResepInMemoryService implements ResepService {
     }
 
     @Override
-    public ResepModel updateCatatan(Long noResep, String catatan){
-        for (ResepModel x: listResep){
-            if(x.getNoResep() == noResep){
-                    x.setCatatan(catatan);
-                return x;
-            }
-        }
+    public ResepModel updateResep(ResepModel resep) {
         return null;
     }
 
     @Override
-    public ResepModel deleteResep(Long noResep){
-        for (ResepModel x: listResep){
-            if(x.getNoResep() == noResep){
-                    x.setCatatan(null);
-                    x.setNoResep(null);
-                    x.setNamaDokter(null);
-                    x.setNamaPasien(null);
-                return x;
-            }
-        }
-        return null;
+    public void deleteResep(ResepModel resep) {
+        resepDb.delete(resep);
     }
+
 }

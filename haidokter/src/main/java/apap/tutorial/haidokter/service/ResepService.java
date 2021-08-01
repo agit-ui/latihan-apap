@@ -1,18 +1,20 @@
 package apap.tutorial.haidokter.service;
 
 import apap.tutorial.haidokter.model.ResepModel;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ResepService {
+
     void addResep(ResepModel resep);
+
+    void deleteResep(ResepModel resep) throws Exception;
 
     List<ResepModel> getResepList();
 
     ResepModel getResepByNomorResep(Long noResep);
 
-    ResepModel updateCatatan(Long noResep, String catatan);
+    ResepModel updateResep(ResepModel resepModel);
 
-    ResepModel deleteResep(Long noResep);
 }

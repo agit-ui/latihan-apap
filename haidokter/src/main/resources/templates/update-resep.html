@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
     <head>
-        <title>Delete Resep</title>
+        <meta charset="UTF-8">
+        <title>Update Resep Berhasil</title>
     </head>
     <body>
-        <h2 th:text="${pesan}"></h2>
+        <h2 th:text="'Resep berhasil dengan nomor ' + ${resep} + ' diupdate'"></h2>
         <a href="/resep/viewall">Kembali</a>
     </body>
 </html>
