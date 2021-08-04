@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>View All Resep</title>
+    </head>
+    <body>
+        <h2>Dafter Seluruh Resep</h2>
+        <div th:each="resep: ${listResep}">
+            <h3 th:text=" 'Nomor Resep: '+ ${resep.noResep}"></h3>
+            <h3 th:text=" 'Nama Dokter: '+ ${resep.namaDokter}"></h3>
+            <h3 th:text=" 'Nama Pasien: '+ ${resep.namaPasien}"></h3>
+            <h3 th:text=" 'Catatan: '+ ${resep.catatan}"></h3>
+        </div>
+        <a href="/">Home</a>
+    </body>
+</html>
